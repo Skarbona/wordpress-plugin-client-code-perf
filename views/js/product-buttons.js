@@ -5,9 +5,16 @@
 var whis = document.querySelector('.tinv-wishlist-clear');
 
 var askButton = document.createElement('button');
-askButton.innerText = 'Ask for prodcut';
+
 askButton.classList.add('ask-button');
+
 whis.appendChild(askButton); //Add Ask before Whis Button
+var askLink = document.createElement('a');
+askLink.setAttribute('href','mailto:office@perfecta.com.pl');
+askLink.innerText = 'Ask for prodcut';
+askButton.appendChild(askLink);
+console.log(askLink);
+
 
 
 //Create DIV and Move elements to it

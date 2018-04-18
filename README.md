@@ -6,3 +6,6 @@ Contact button on product page.
 Block Website for none register users.
 Customize login page.
 Add New User Type - Front End Product Manager
+Custom User Meta Deta on Register
+Customize emails
+
