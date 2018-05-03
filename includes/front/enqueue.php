@@ -28,6 +28,28 @@ wp_enqueue_script('fs_product_buttons');
 
     wp_enqueue_script('fs_loading');
 
+    wp_register_script('fs_vuejs', plugins_url('/views/js/vue.js',
+        PORTFOLIO_PLUGIN_URL),
+        array(),
+        '1.0.0',
+        true
+    );
+
+    wp_enqueue_script('fs_vuejs');
+
+    wp_register_script('fs_vuejs-instance', plugins_url('/views/js/vue-instance.js',
+        PORTFOLIO_PLUGIN_URL),
+        array(),
+        '1.0.0',
+        true
+    );
+
+    wp_enqueue_script('fs_vuejs-instance');
+
+    wp_register_style('fs_styles',plugins_url('/views/css/styles.css',
+        PORTFOLIO_PLUGIN_URL));
+
+    wp_enqueue_style('fs_styles');
 
 
 
