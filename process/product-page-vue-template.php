@@ -23,7 +23,7 @@ function fs_woocommerce_before_add_to_cart_form(  ) {
                         <input id="productID" name="productID" value="<?php echo $productId  ?>" type="hidden" required>
                         <div class="form-group">
                             <label for="quantity">Quantity of product you want</label>
-                            <select name="quantity" id="quantity" v-model="quantity">
+                            <select name="quantity" id="quantity" v-model="quantity"  required>
                                 <option value="1-10">1-10</option>
                                 <option value="10-100">10-100</option>
                                 <option value="100-300">100-300</option>
@@ -37,18 +37,20 @@ function fs_woocommerce_before_add_to_cart_form(  ) {
                         <div class="form-group">
                             <label for="date">Date of purchase</label>
                             <input type="date" id="date" name="date"
-                                   v-model="date"
+                                   v-model="date"  required
                                    >
                         </div>
                         <div class="form-group">
                             <label for="probability">Probability of purchase</label>
-                            <select name="probability" id="probability" v-model="probability">
+                            <select name="probability" id="probability" v-model="probability"  required>
                                 <option value="low" selected="selected">low</option>
                                 <option value="medium">medium</option>
                                 <option value="high">high</option>
                             </select>
                         </div>
                         <button type="submit"  class="ask-button">Send</button>
+                        <div v-show="alertWrong" class="fusion-alert alert error alert-danger fusion-alert-center fusion-alert-capitalize alert-dismissable alert-shadow" style="background-color:#f2dede;color:rgba(166,66,66,1);border-color:rgba(166,66,66,1);border-width:1px;margin-top:20px;"><button type="button" class="close toggle-alert" data-dismiss="alert" aria-hidden="true">×</button><div class="fusion-alert-content-wrapper"><span class="alert-icon"><i class="fa-lg  fa fa-exclamation-triangle"></i></span><span class="fusion-alert-content">Something go wrong. Reload and Try again.</span></div></div>
+                        <div v-show="alertSuccess" class="fusion-alert alert success alert-success fusion-alert-center fusion-alert-capitalize alert-dismissable alert-shadow" style="background-color:#dff0d8;color:rgba(92,163,64,1);border-color:rgba(92,163,64,1);border-width:1px;margin-top:20px;"><button type="button" class="close toggle-alert" data-dismiss="alert" aria-hidden="true">×</button><div class="fusion-alert-content-wrapper"><span class="alert-icon"><i class="fa-lg  fa fa-check-circle"></i></span><span class="fusion-alert-content">Success! Thank You for your feedback!</span></div></div>
                     </form>
 
                 </div>

@@ -29,6 +29,7 @@ include('includes/admin/users/inactive.php');
 include('includes/admin/users/messages.php');
 include('process/product-page-vue-template.php');
 include('process/add-to-database.php');
+include('shortcodes/client-table.php');
 
 
 //HOOKS
@@ -48,29 +49,15 @@ add_action( 'admin_head', 'fs_custom_admin_user_styles');
 add_action( 'user_register','fs_inactive');
 add_action( 'wp_mail_from_name', 'fs_register_message');
 add_action( 'woocommerce_product_meta_start', 'fs_woocommerce_before_add_to_cart_form');
-add_action('wp_ajax_foo', 'foo' );
-
+add_action( 'wp_ajax_fs_add_to_database', 'fs_add_to_database' );
 
 
 //Filters
 add_filter( 'registration_errors', 'fs_registration_errors', 10, 3 );
 add_filter( 'wp_mail_from_name', 'fs_fromname');
-
-
-
-//add_filter( 'woocommerce_bundled_product_gallery_classes', 'fs_pb_remove_images_class', 10, 2 );
 add_filter("login_headerurl","fs_login_logo_url");
 
 
-
-
-
-
-//Filter Hooks
-
-//DODAC INCLUDE KTÓRY BĘDZIE GENEROWAC ID PRODUKTU NA DOLE STRONY, A POZNIEJ DODAC POPUP W BOOTSTRAPIE
-
-
 //SHORTCODES
-
 add_shortcode('product_creator','fs_product_creator');
+add_shortcode( 'clients_table', 'fs_clients_table_function' );

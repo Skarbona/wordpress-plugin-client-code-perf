@@ -4,12 +4,13 @@ new Vue({
     el: '#vueApp',
     data: {
         popupVisiblity: false,
+        alertWrong: false,
+        alertSuccess: false,
         date: '2019-02-09',
         probability: 'low',
         quantity: '1-10',
         userID: document.querySelector('#userID').value,
         productID: document.querySelector('#productID').value,
-        postData: {}
 
     },
     methods: {
@@ -21,31 +22,37 @@ new Vue({
         },
         onSubmit() {
 
-            jQuery(function($) {
 
-                
-                this.postData = {
-                    date,
-                    probability,
-                    quantity,
-                    userID,
-                    productID
+                var postData = {
+                    action : 'fs_add_to_database',
+                    date: this.date,
+                    probability: this.probability,
+                    quantity: this.quantity,
+                    userID: this.userID,
+                    productID: this.productID
+
                 };
 
-                $.post(
+
+                var thisOne = this;
+                jQuery.post(
                     ajax_object.ajax_url,
-                    {
-                        'action': 'foobar',
-                        'foobar_id':   123
-                    },
-                    function(response) {
-                       alert(response);
+                    postData,
+                    function (response) {
+                        if(response.status === 2) {
+                            thisOne.alertWrong = false;
+                            thisOne.alertSuccess = true;
+
+                        } else {
+                            thisOne.alertWrong = true;
+                            thisOne.alertSuccess = false;
+                        }
                     }
                 );
 
 
 
-            });
+
 
 
         }
