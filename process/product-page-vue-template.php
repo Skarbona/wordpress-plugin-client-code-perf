@@ -18,11 +18,12 @@ function fs_woocommerce_before_add_to_cart_form(  ) {
                                 <i class="fa fa-close"></i>
                                 </a>
                             </div>
-                    <form>
-                        <input name="userID" value="<?php echo $userId  ?>" type="hidden" required>
-                        <input name="productID" value="<?php echo $productId  ?>" type="hidden" required>
+                    <form method="post" @submit.prevent="onSubmit">
+                        <input id="userID" name="userID" value="<?php echo $userId  ?>" type="hidden" required>
+                        <input id="productID" name="productID" value="<?php echo $productId  ?>" type="hidden" required>
                         <div class="form-group">
-                            <select>
+                            <label for="quantity">Quantity of product you want</label>
+                            <select name="quantity" id="quantity" v-model="quantity">
                                 <option value="1-10">1-10</option>
                                 <option value="10-100">10-100</option>
                                 <option value="100-300">100-300</option>
@@ -34,15 +35,20 @@ function fs_woocommerce_before_add_to_cart_form(  ) {
                         </div>
 
                         <div class="form-group">
-                            <input type="date" id="date" name="date">
+                            <label for="date">Date of purchase</label>
+                            <input type="date" id="date" name="date"
+                                   v-model="date"
+                                   >
                         </div>
                         <div class="form-group">
-                            <select>
-                                <option value="low">low</option>
+                            <label for="probability">Probability of purchase</label>
+                            <select name="probability" id="probability" v-model="probability">
+                                <option value="low" selected="selected">low</option>
                                 <option value="medium">medium</option>
                                 <option value="high">high</option>
                             </select>
                         </div>
+                        <button type="submit"  class="ask-button">Send</button>
                     </form>
 
                 </div>

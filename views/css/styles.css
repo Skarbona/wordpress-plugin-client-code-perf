@@ -48,3 +48,10 @@
     display:block;
     margin:10px 0px;
 }
+
+.form-group input,
+.form-group select {
+    width:100%;
+    padding:5px;
+    color:#333;
+}

@@ -43,13 +43,19 @@ wp_enqueue_script('fs_product_buttons');
         '1.0.0',
         true
     );
+    wp_localize_script('fs_vuejs-instance','ajax_object',array(
+        'ajax_url'  =>  admin_url('admin-ajax.php')
+    ));
+
 
     wp_enqueue_script('fs_vuejs-instance');
+
 
     wp_register_style('fs_styles',plugins_url('/views/css/styles.css',
         PORTFOLIO_PLUGIN_URL));
 
     wp_enqueue_style('fs_styles');
+
 
 
 

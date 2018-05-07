@@ -28,6 +28,7 @@ include('includes/admin/styles.php');
 include('includes/admin/users/inactive.php');
 include('includes/admin/users/messages.php');
 include('process/product-page-vue-template.php');
+include('process/add-to-database.php');
 
 
 //HOOKS
@@ -47,6 +48,7 @@ add_action( 'admin_head', 'fs_custom_admin_user_styles');
 add_action( 'user_register','fs_inactive');
 add_action( 'wp_mail_from_name', 'fs_register_message');
 add_action( 'woocommerce_product_meta_start', 'fs_woocommerce_before_add_to_cart_form');
+add_action('wp_ajax_foo', 'foo' );
 
 
 
