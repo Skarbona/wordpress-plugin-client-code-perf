@@ -1,0 +1,57 @@
+.vue-popup {
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    position:fixed;
+    z-index:10011;
+    top:0;
+    left:0;
+
+
+}
+.vue-popup__overcontainer {
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+}
+
+.vue-popup__container {
+    background:#fff;
+    width:400px;
+    height:auto;
+    color:#333;
+    position:relative;
+    padding:30px;
+
+}
+
+.vue-popup__container--close {
+    position:absolute;
+    color:#333;
+    cursor:pointer;
+    right: 20px;
+    top: 0px;
+    font-size: 30px;
+}
+
+.ask-button {
+    cursor:pointer;
+}
+
+.form-group {
+    width:100%;
+    display:block;
+    margin:10px 0px;
+}
+
+.form-group input,
+.form-group select {
+    width:100%;
+    padding:5px;
+    color:#333;
+}

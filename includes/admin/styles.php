@@ -13,8 +13,8 @@ function fs_custom_admin_user_styles() {
         .user-author_email-wrap,
         .user-url-wrap,
         .user-description-wrap,
-        .user-profile-picture,
-        h2,h3
+        .user-profile-picture
+
 
         {
             display: none !important;

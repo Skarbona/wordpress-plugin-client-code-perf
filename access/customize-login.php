@@ -4,7 +4,7 @@ function fs_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
             background-image: url(<?php  echo WP_PLUGIN_URL . '/chiliit/img/logo-sklep.png'  ?> );
-            height:auto;
+            height:80px;
             width:300px;
             background-size: contain;
             background-repeat: no-repeat;
