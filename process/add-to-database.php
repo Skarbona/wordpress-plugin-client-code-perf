@@ -23,7 +23,6 @@ function fs_add_to_database() {
     );
 
     $output['status'] = 2;
-    $wpdb->print_error();
     wp_send_json($output);
 
 

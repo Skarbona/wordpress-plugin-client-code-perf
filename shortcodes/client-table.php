@@ -15,13 +15,14 @@ function fs_clients_table_function( $atts ){
                     <th>Date</th></tr>';
 
     foreach(array_reverse($table) as $value) {
-        $user_info = get_userdata($value->client_id);
+        $user_info = get_user_meta($value->client_id,'user_country');
         $post_info = get_post($value->product_id);
         $post_link = get_permalink($value->product_id);
         $post_date = date("F Y", strtotime($value->date));
+       
         $table_values .= "<tr> 
              <td><a href='$post_link'>$post_info->post_title</a></td>
-             <td>$user_info->user_nicename</td>
+             <td>$user_info[0]</td>
              <td>$value->quantity</td>
              <td>$value->probability</td>
              <td>$post_date</td>
