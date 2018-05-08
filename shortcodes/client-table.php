@@ -18,7 +18,7 @@ function fs_clients_table_function( $atts ){
         $user_info = get_userdata($value->client_id);
         $post_info = get_post($value->product_id);
         $post_link = get_permalink($value->product_id);
-        $post_date = date("jS F Y", strtotime($value->date));
+        $post_date = date("F Y", strtotime($value->date));
         $table_values .= "<tr> 
              <td><a href='$post_link'>$post_info->post_title</a></td>
              <td>$user_info->user_nicename</td>

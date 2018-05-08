@@ -7,7 +7,7 @@ function fs_add_to_database() {
     $output      =  array('status' => 1);
     $userID      = absint($_POST['userID']);
     $productID   = absint($_POST['productID']);
-    $date        = $_POST['date'];
+    $date        = $_POST['date'] . '-01';
     $probability = $_POST['probability'];
     $quantity    = $_POST['quantity'];
 
