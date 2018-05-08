@@ -37,7 +37,9 @@ include('shortcodes/client-table.php');
 register_activation_hook(__FILE__, 'fs_activate_plugin'); //check WP version
 add_action( 'wp_enqueue_scripts','fs_plugin_styles',100);
 add_action( 'woocommerce_after_shop_loop_item', 'fs_shop_display_skus', 9 );
-add_action( 'plugins_loaded', 'fs_register_users_only' );
+add_action( 'template_redirect', 'fs_forcelogin' );
+add_action( 'plugins_loaded', 'fs_forcelogin_load_textdomain' );
+add_filter( 'rest_authentication_errors', 'fs_forcelogin_rest_access', 99 );
 add_action( 'login_enqueue_scripts', 'fs_login_logo' );
 add_action( 'show_user_profile', 'fs_extra_author_fields' );
 add_action( 'edit_user_profile', 'fs_extra_author_fields' );
