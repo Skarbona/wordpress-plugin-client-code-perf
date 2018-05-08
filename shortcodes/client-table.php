@@ -29,9 +29,19 @@ function fs_clients_table_function( $atts ){
         </tr>";
 
     }
+    $product_list = array();
+
+    foreach(array_reverse($table) as $value) {
+
+        if(!in_array($value->product_id,$product_list)) {
+            array_push($product_list,$value->product_id);
+        }
+    }
+
+    
 
     $table_values .= '</tbody></table>';
-    return $table_values;
+    return print_r($product_list);
 
 
 }

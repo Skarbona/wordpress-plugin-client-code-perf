@@ -23,15 +23,7 @@ function fs_woocommerce_before_add_to_cart_form(  ) {
                         <input id="productID" name="productID" value="<?php echo $productId  ?>" type="hidden" required>
                         <div class="form-group">
                             <label for="quantity">Quantity you consider to buy:</label>
-                            <select name="quantity" id="quantity" v-model="quantity"  required>
-                                <option value="1-10">1-10</option>
-                                <option value="10-100">10-100</option>
-                                <option value="100-300">100-300</option>
-                                <option value="300-500">300-500</option>
-                                <option value="500-1000">500-1000</option>
-                                <option value="1000-2000">1000-2000</option>
-                                <option value="2000-5000">2000-5000</option>
-                            </select>
+                            <input type="number" name="quantity" id="quantity" v-model="quantity"  required>
                         </div>
 
                         <div class="form-group">

@@ -8,7 +8,7 @@ new Vue({
         alertSuccess: false,
         date: '2019-02',
         probability: 'low',
-        quantity: '1-10',
+        quantity: 200,
         userID: document.querySelector('#userID').value,
         productID: document.querySelector('#productID').value,
 
