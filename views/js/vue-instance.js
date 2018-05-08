@@ -6,7 +6,7 @@ new Vue({
         popupVisiblity: false,
         alertWrong: false,
         alertSuccess: false,
-        date: '2019-02-09',
+        date: '2019-02',
         probability: 'low',
         quantity: '1-10',
         userID: document.querySelector('#userID').value,
