@@ -49,7 +49,6 @@ add_action( 'register_form', 'fs_registration_form' );
 add_action( 'user_register', 'fs_user_register' );
 add_action( 'admin_head', 'fs_custom_admin_user_styles');
 add_action( 'user_register','fs_inactive');
-add_action( 'wp_mail_from_name', 'fs_register_message');
 add_action( 'woocommerce_product_meta_start', 'fs_woocommerce_before_add_to_cart_form');
 add_action( 'wp_ajax_fs_add_to_database', 'fs_add_to_database' );
 

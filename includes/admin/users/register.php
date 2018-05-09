@@ -55,6 +55,7 @@ function fs_registration_form() {
         </select>
     </p>
     <?php
+    fs_register_message();
 }
 
 function fs_registration_errors( $errors, $sanitized_user_login, $user_email ) {
