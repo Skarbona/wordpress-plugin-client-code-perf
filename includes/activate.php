@@ -26,7 +26,7 @@ function fs_activate_plugin()  {
     //Creating Data Base
 
     $createSQL = "CREATE TABLE $tablename (
-	`id` INT NOT NULL AUTO_INCREMENT , `client_id` INT(255) NOT NULL , `product_id` INT(255) NOT NULL , `quantity` VARCHAR(255) NOT NULL , `date` DATETIME NOT NULL , `probability` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)
+	`id` INT NOT NULL AUTO_INCREMENT , `client_id` INT(255) NOT NULL , `product_id` INT(255) NOT NULL , `quantity` INT(255) NOT NULL , `date` DATETIME NOT NULL , `probability` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)
     ) $charsetDb; ";
 
 

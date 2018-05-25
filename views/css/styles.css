@@ -55,3 +55,31 @@
     padding:5px;
     color:#333;
 }
+
+.table-1 .th-3 {
+    margin:0px;
+    padding:0px;
+
+}
+.table-1 .th-3 table {
+    width:300px;
+}
+.table_prob--td {
+    width:100px;
+}
+.table-1 .th-3 tr,
+.table-1 .th-3 table {
+    border:0px solid #fff;
+    box-shadow:none!important;
+}
+.table_prob {
+    display:inline-block;
+    width:33%;
+    text-align:center;
+    padding:10px;
+}
+
+.table_prob__title {
+    text-align:center;
+    border-bottom:1px solid #e0dede;
+}

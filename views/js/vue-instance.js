@@ -6,12 +6,16 @@ new Vue({
         popupVisiblity: false,
         alertWrong: false,
         alertSuccess: false,
-        date: '2019-02',
         probability: 'low',
-        quantity: '1-10',
+        quantity: 200,
         userID: document.querySelector('#userID').value,
         productID: document.querySelector('#productID').value,
 
+    },
+    computed: {
+        date() {
+            return document.querySelector('#date').value;
+        }
     },
     methods: {
         showPopup(){
@@ -42,6 +46,7 @@ new Vue({
                         if(response.status === 2) {
                             thisOne.alertWrong = false;
                             thisOne.alertSuccess = true;
+                            window.location = "/purchase-forecast-to-get-consolidation-benefits/";
 
                         } else {
                             thisOne.alertWrong = true;
