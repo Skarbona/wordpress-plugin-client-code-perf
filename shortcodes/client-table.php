@@ -78,11 +78,12 @@ function fs_clients_table_function( $atts, $content = null ): string {  ob_start
 
 
     }
-    $compHandler = [];
 
+    $compHandler = [];
     foreach( $productHandler as $value ) {
         $compHandler[ $value['product'] ][] = $value;
     }
+
     $lasthandler = [];
     foreach( $compHandler as $values ) {
         foreach($values as $value){
@@ -95,14 +96,17 @@ function fs_clients_table_function( $atts, $content = null ): string {  ob_start
             } else {
 
                 array_push($lasthandler[$value['product']] , $value);
+
             }
         }
     }
-    $output = [];
 
+    $output = [];
     foreach($lasthandler as $klucz => $values) {
+
         $output[$klucz] = [];
         foreach($values as $value) {
+
             $key = $value['country'];
             if (array_key_exists($key, $output[$klucz])) {
 
@@ -122,7 +126,6 @@ function fs_clients_table_function( $atts, $content = null ): string {  ob_start
                     $output[$klucz][$key]['m10'] += $value['m10'];
                     $output[$klucz][$key]['m11'] += $value['m11'];
                     $output[$klucz][$key]['m12'] += $value['m12'];
-
 
             } else {
                 $output[$klucz][$key] = $value;
@@ -152,18 +155,18 @@ function fs_clients_table_function( $atts, $content = null ): string {  ob_start
                             </tr>
                         </table>
                      </th>
-                     <th><?php echo date("M"); ?></th>
-                     <th><?php echo date("M", strtotime("+1 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+2 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+3 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+4 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+5 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+6 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+7 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+8 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+9 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+10 months")); ?></th>
-                     <th><?php echo date("M", strtotime("+11 months")); ?></th>
+                     <th><?php echo date("Y, M"); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+1 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+2 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+3 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+4 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+5 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+6 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+7 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+8 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+9 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+10 months")); ?></th>
+                     <th><?php echo date("Y, M", strtotime("+11 months")); ?></th>
                 </tr>
 
 
