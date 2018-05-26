@@ -83,3 +83,9 @@
     text-align:center;
     border-bottom:1px solid #e0dede;
 }
+
+.table-1 tr .table__image {
+    padding:5px 0px;
+    min-width:100px;
+    margin:0px;
+}

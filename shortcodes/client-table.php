@@ -1,5 +1,5 @@
 <?php
-function fs_clients_table_function( $atts, $content = null ): string {  ob_start();
+function fs_clients_table_function( $atts, $content = null ) {  ob_start();
 
     global $wpdb;
 
@@ -140,6 +140,7 @@ function fs_clients_table_function( $atts, $content = null ): string {  ob_start
         <table style="width:100%;text-align:left;">
             <tbody>
                 <tr>
+                     <th></th>
                      <th>Product</th>
                      <th>Country</th>
                      <th>Qty</th>
@@ -174,11 +175,22 @@ function fs_clients_table_function( $atts, $content = null ): string {  ob_start
                             foreach($output as $products){
 
                                 foreach($products as $countries) {
-
+                                    $post_img = get_the_post_thumbnail_url($countries["product"],'thumbnail');
+                                    $post_imgF = get_the_post_thumbnail_url($countries["product"],'full');
                                     $post_info = get_post($countries["product"]);
                                     $post_link = get_permalink($countries["product"]);
 
                                         echo '<tr>
+                                              <td class="table__image">
+                                                <a href="' . $post_imgF . '" class="fusion-lightbox"
+                                                  data-rel="iLightbox[7c816a7cf99a7ecc3e7]" 
+                                                  data-title="' .  $post_info->post_title  . '" 
+                                                  title="' .  $post_info->post_title  . '"
+                                                   data-caption="">
+                                                  <img 
+                                                  src="' . $post_img . '" /> 
+                                                 </a>
+                                              </td>
                                               <td><a href='. $post_link . '>' .  $post_info->post_title  . '</a></td>' .
                                              '<td>' .  $countries["country"]  . '</td>' .
                                              '<td>' .  $countries["qty"]      . '</td>' .
