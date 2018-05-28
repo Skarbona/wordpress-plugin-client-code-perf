@@ -175,7 +175,7 @@ function fs_clients_table_function( $atts, $content = null ) {  ob_start();
                             foreach($output as $products){
 
                                 foreach($products as $countries) {
-                                    $post_img = get_the_post_thumbnail_url($countries["product"],'thumbnail');
+                                    $post_img  = get_the_post_thumbnail_url($countries["product"],'thumbnail');
                                     $post_imgF = get_the_post_thumbnail_url($countries["product"],'full');
                                     $post_info = get_post($countries["product"]);
                                     $post_link = get_permalink($countries["product"]);
@@ -184,9 +184,15 @@ function fs_clients_table_function( $atts, $content = null ) {  ob_start();
                                               <td class="table__image">
                                                 <a href="' . $post_imgF . '" class="fusion-lightbox"
                                                   data-rel="iLightbox[7c816a7cf99a7ecc3e7]" 
-                                                  data-title="' .  $post_info->post_title  . '" 
+                                                  data-title="' .  $post_info->post_title  . '<br/>
+                                                  <b>' .  $countries["country"]  .   ', QTY: ' . $countries["qty"] . '</b>" 
                                                   title="' .  $post_info->post_title  . '"
-                                                   data-caption="">
+                                                   data-caption="
+                                                   Low: ' .  $countries["p_l"]      . '
+                                                   , Medium: ' .  $countries["p_m"]      . '
+                                                   , High: ' .  $countries["p_h"]      . '
+                                           
+                                                   ">
                                                   <img 
                                                   src="' . $post_img . '" /> 
                                                  </a>

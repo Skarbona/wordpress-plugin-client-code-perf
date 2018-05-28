@@ -89,3 +89,8 @@
     min-width:100px;
     margin:0px;
 }
+
+.ilightbox-holder.metro-white .ilightbox-container .ilightbox-caption {
+    font-size:20px;
+    font-weight:700;
+}
